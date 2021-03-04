@@ -28,7 +28,7 @@ public class FornecedorDaoImplTest {
     public void testSalvar() {
         System.out.println("Salvar");
         fornecedor = new Fornecedor();
-        fornecedor.setNome("Fornecedor 1");
+        fornecedor.setNome("Fornecedor 2");
         sessao = HibernateUtil.abrirConexao();
         fornecedorDao.salvarOuAlterar(fornecedor, sessao);
         sessao.close();

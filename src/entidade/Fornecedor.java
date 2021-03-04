@@ -28,6 +28,16 @@ public class Fornecedor implements Serializable {
     @Column(nullable = false, length = 100)
     private String nome;
 
+    public Fornecedor() {
+    }
+
+    public Fornecedor(Long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+    
+    
+
     public String getNome() {
         return nome;
     }
