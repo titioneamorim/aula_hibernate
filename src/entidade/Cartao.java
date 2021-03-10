@@ -32,7 +32,7 @@ public class Cartao  implements Serializable{
     @Column(nullable = false, length = 16)
     private String bandeira;
     
-    @Column(nullable = false)
+    @Column(nullable = false, length = 5)
     private String validade;
 
     public Cartao() {

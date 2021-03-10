@@ -7,6 +7,9 @@ package dao;
 
 import br.com.utilitario.UtilGerador;
 import entidade.Fornecedor;
+import java.util.Date;
+
+
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -26,11 +29,10 @@ public class FornecedorDaoImplTest {
         fornecedorDao = new FornecedorDaoImpl();
     }
 
-  // @Test
+   @Test
     public void testSalvar() {
         System.out.println("Salvar");
-        fornecedor = new Fornecedor();
-        fornecedor.setNome(UtilGerador.gerarNome());
+        fornecedor = new Fornecedor(null, UtilGerador.gerarNome(), new Date(),"teste");
         sessao = HibernateUtil.abrirConexao();
         fornecedorDao.salvarOuAlterar(fornecedor, sessao);
         sessao.close();
@@ -66,7 +68,7 @@ public class FornecedorDaoImplTest {
         assertEquals(fornecedor, fornecedorAlterado);
         
     }
-    @Test
+  //  @Test
 
     public void testPesquisarPorId() {
         System.out.println("pesquisarPorId");
