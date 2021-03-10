@@ -17,7 +17,7 @@ public class CartaoDaoImpl extends BaseDaoImpl<Cartao, Long> implements CartaoDa
 
     @Override
     public Cartao pesquisarPorId(Long id, Session sessao) throws HibernateException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Cartao) sessao.get(Cartao.class, id);
     }
 
     

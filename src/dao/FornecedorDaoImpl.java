@@ -8,21 +8,24 @@ package dao;
 import entidade.Fornecedor;
 import java.util.List;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
  * @author felipe.souza2
  */
-public class FornecedorDaoImpl extends BaseDaoImpl<Fornecedor, Long> implements FornecedorDao{
+public class FornecedorDaoImpl extends BaseDaoImpl<Fornecedor, Long> implements FornecedorDao {
 
     @Override
     public Fornecedor pesquisarPorId(Long id, Session sessao) throws HibernateException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Fornecedor) sessao.get(Fornecedor.class, id); // aqui faz o casting e envia o Object convertido em Fornecedor
+        
     }
 
     @Override
     public List<Fornecedor> listarTodo(Session sessao) throws HibernateException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query consulta = sessao.createQuery("FROM Fornecedor f");
+        return consulta.list();
     }
-    
+
 }
