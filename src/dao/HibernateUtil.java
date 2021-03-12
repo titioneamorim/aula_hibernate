@@ -6,6 +6,7 @@
 package dao;
 
 import entidade.Cartao;
+import entidade.Correntista;
 import entidade.Fornecedor;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -28,6 +29,7 @@ public class HibernateUtil {
             Configuration cfg = new Configuration();
             cfg.addAnnotatedClass(Fornecedor.class);
             cfg.addAnnotatedClass(Cartao.class);
+            cfg.addAnnotatedClass(Correntista.class);
 
             cfg.configure("/dao/hibernate.cfg.xml");
             StandardServiceRegistryBuilder build = new StandardServiceRegistryBuilder().
